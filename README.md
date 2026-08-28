@@ -1332,6 +1332,6 @@ Il couvre l'ensemble d'un petit pipeline :
 
 Le modèle actuel constitue une baseline qui pourra être améliorée avec davantage de données, de nouvelles variables, de meilleurs modèles et une infrastructure MLOps complète.
 
-🚀 Cotonou Immo AI
+# 🚀 Cotonou Immo AI
 
-From data → to model → to API → to application. 🇧🇯🤖
+## From data → to model → to API → to application. 🇧🇯🤖
