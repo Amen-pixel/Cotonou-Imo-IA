@@ -1,57 +1,57 @@
 
-🏠 Cotonou Immo AI 🇧🇯
+# 🏠 Cotonou Immo AI 🇧🇯
 
-Application de Machine Learning pour l'estimation des prix immobiliers à Cotonou, intégrant un modèle Random Forest, une API FastAPI et une interface interactive Streamlit.
+## Application de Machine Learning pour l'estimation des prix immobiliers à Cotonou, intégrant un modèle Random Forest, une API FastAPI et une interface interactive Streamlit.
 
-📌 Table des matières
-1. Présentation du projet
-2. Objectifs
-3. Pourquoi ce projet
-4. Fonctionnalités
-5. Architecture
-6. Technologies utilisées
-7. Structure du projet
-8. Dataset
-9. Variables utilisées
-10. Préparation des données
-11. Modèle de Machine Learning
-12. Entraînement
-13. Évaluation du modèle
-14. Interprétation des résultats
-15. API FastAPI
-16. Interface Streamlit
-17. Fonctionnement complet
-18. Historique des estimations
-19. Estimation du prix au m²
-20. Statistiques
-21. Graphiques
-22. Installation
-23. Lancement du projet
-24. Utilisation
-25. Exemple
-26. API : exemple de requête
-27. API : exemple de réponse
-28. Gestion des erreurs
-29. Limites du projet
-30. Améliorations futures
-31. Perspectives MLOps
-32. Compétences démontrées
-33. Résultats du projet
-34. Avertissement
-35. Auteur
-1. 🏠 Présentation du projet
+## 📌 Table des matières
+### 1. Présentation du projet
+### 2. Objectifs
+### 3. Pourquoi ce projet
+### 4. Fonctionnalités
+### 5. Architecture
+### 6. Technologies utilisées
+### 7. Structure du projet
+### 8. Dataset
+### 9. Variables utilisées
+### 10. Préparation des données
+### 11. Modèle de Machine Learning
+### 12. Entraînement
+### 13. Évaluation du modèle
+### 14. Interprétation des résultats
+### 15. API FastAPI
+### 16. Interface Streamlit
+### 17. Fonctionnement complet
+### 18. Historique des estimations
+### 19. Estimation du prix au m²
+### 20. Statistiques
+### 21. Graphiques
+### 22. Installation
+### 23. Lancement du projet
+### 24. Utilisation
+### 25. Exemple
+### 26. API : exemple de requête
+### 27. API : exemple de réponse
+### 28. Gestion des erreurs
+### 29. Limites du projet
+### 30. Améliorations futures
+### 31. Perspectives MLOps
+### 32. Compétences démontrées
+### 33. Résultats du projet
+### 34. Avertissement
+### 35. Auteur
+## 1. 🏠 Présentation du projet
 
 Cotonou Immo AI est un projet personnel de Machine Learning ayant pour objectif de développer une application capable d'estimer le prix d'un bien immobilier à Cotonou à partir de plusieurs caractéristiques.
 
 L'utilisateur renseigne les caractéristiques d'un bien immobilier, notamment :
 
-📍 le quartier ;
-🏠 le type de bien ;
-📐 la superficie ;
-🛏️ le nombre de chambres ;
-🚪 le nombre de pièces ;
-🚿 le nombre de salles de bain ;
-🚗 le nombre de garages.
+## 📍 le quartier ;
+## 🏠 le type de bien ;
+## 📐 la superficie ;
+## 🛏️ le nombre de chambres ;
+## 🚪 le nombre de pièces ;
+## 🚿 le nombre de salles de bain ;
+## 🚗 le nombre de garages.
 
 Ces informations sont envoyées à une API développée avec FastAPI.
 
@@ -59,7 +59,7 @@ L'API utilise ensuite un modèle de Machine Learning entraîné avec Scikit-lear
 
 Le résultat est finalement renvoyé à l'interface Streamlit et affiché à l'utilisateur.
 
-2. 🎯 Objectifs
+## 2. 🎯 Objectifs
 
 Le projet poursuit plusieurs objectifs.
 
@@ -99,7 +99,7 @@ la création d'une interface utilisateur avec Streamlit ;
 la gestion des erreurs ;
 la visualisation des résultats ;
 la mise en place d'un historique des prédictions.
-3. 💡 Pourquoi ce projet ?
+## 3. 💡 Pourquoi ce projet ?
 
 Le marché immobilier de Cotonou peut présenter une forte variation des prix selon plusieurs facteurs :
 
@@ -118,14 +118,14 @@ L'idée est de construire un système de prédiction basé sur les données.
 
 Le projet constitue ainsi une première expérience concrète dans le domaine de la Data Science et du Machine Learning appliqué à un problème réel.
 
-4. 🚀 Fonctionnalités
-🏠 Estimation immobilière
+## 4. 🚀 Fonctionnalités
+### 🏠 Estimation immobilière
 
 L'utilisateur peut sélectionner un quartier et entrer les caractéristiques du bien.
 
 L'application retourne ensuite une estimation du prix.
 
-📍 Sélection du quartier
+### 📍 Sélection du quartier
 
 Les quartiers disponibles sont proposés directement dans une liste.
 
@@ -147,7 +147,7 @@ Cotonou Centre
 
 Les modalités réellement apprises par le modèle dépendent toutefois des catégories présentes dans le dataset d'entraînement.
 
-🏡 Type de bien
+### 🏡 Type de bien
 
 L'utilisateur peut sélectionner :
 
@@ -156,7 +156,7 @@ Maison
 Appartement
 Immeuble
 Terrain
-📐 Caractéristiques numériques
+### 📐 Caractéristiques numériques
 
 L'application permet de renseigner :
 
@@ -165,17 +165,17 @@ chambres ;
 pièces ;
 salles de bain ;
 garages.
-💰 Prix estimé
+### 💰 Prix estimé
 
 Après l'appel à l'API, l'application affiche le prix estimé.
 
 Exemple :
 
-💰 Prix estimé :
+### 💰 Prix estimé :
 
 
 203,796,667 FCFA
-📊 Prix estimé au m²
+### 📊 Prix estimé au m²
 
 L'application calcule également une valeur indicative du prix par mètre carré :
 
@@ -189,13 +189,13 @@ Superficie = 350 m²
 on obtient environ :
 
 582 276 FCFA/m²
-📜 Historique
+## 📜 Historique
 
 Chaque estimation réalisée pendant la session est enregistrée dans l'application.
 
 L'utilisateur peut ainsi comparer plusieurs biens.
 
-📈 Statistiques
+## 📈 Statistiques
 
 L'application calcule notamment :
 
@@ -204,7 +204,7 @@ prix moyen ;
 prix minimum ;
 prix maximum ;
 prix moyen au m².
-📊 Graphiques
+## 📊 Graphiques
 
 Deux visualisations sont proposées :
 
@@ -216,7 +216,7 @@ Le graphique permet de visualiser les prix des différentes estimations réalis�
 
 Une seconde visualisation permet de comparer les prix au m².
 
-5. 🏗️ Architecture
+## 5. 🏗️ Architecture
 
 L'application utilise une architecture en plusieurs couches.
 
@@ -305,7 +305,7 @@ Streamlit
 
 Streamlit est utilisé pour créer l'interface utilisateur.
 
-7. 📁 Structure du projet
+## 7. 📁 Structure du projet
 
 La structure du projet est la suivante :
 
@@ -356,7 +356,7 @@ README.md
 
 Contient la documentation du projet.
 
-8. 📊 Dataset
+## 8. 📊 Dataset
 
 Le projet utilise un dataset immobilier consacré à Cotonou et utilisé pour entraîner le modèle.
 
@@ -368,7 +368,7 @@ Le dataset contient les caractéristiques nécessaires à la construction du mod
 
 L'objectif du dataset est de fournir au modèle des exemples de biens immobiliers associés à leurs prix.
 
-9. 🔢 Variables utilisées
+## 9. 🔢 Variables utilisées
 
 Les variables exploitées dans le modèle correspondent aux caractéristiques renseignées dans l'application.
 
@@ -384,7 +384,7 @@ prix	Prix du bien
 
 La variable prix constitue la variable cible du problème de Machine Learning.
 
-10. 🧹 Préparation des données
+## 10. 🧹 Préparation des données
 
 Avant l'entraînement, les données doivent être transformées afin d'être utilisables par le modèle.
 
@@ -404,7 +404,7 @@ Cette étape est importante car les algorithmes de Machine Learning ne peuvent p
 
 sans transformation.
 
-11. 🧠 Modèle de Machine Learning
+## 11. 🧠 Modèle de Machine Learning
 
 Le modèle choisi est :
 
@@ -418,7 +418,7 @@ Prix immobilier
 
 Le problème est donc un problème de régression supervisée.
 
-12. 🌳 Pourquoi Random Forest ?
+## 12. 🌳 Pourquoi Random Forest ?
 
 Un Random Forest est constitué de plusieurs arbres de décision.
 
@@ -443,7 +443,7 @@ Schématiquement :
 
 Cette approche permet au modèle de capturer des relations potentiellement complexes entre les caractéristiques du bien et son prix.
 
-13. 🏋️ Entraînement
+## 13. 🏋️ Entraînement
 
 Le dataset est séparé en deux parties :
 
@@ -455,7 +455,7 @@ Les données d'entraînement servent à apprendre les relations entre les variab
 
 Les données de test permettent ensuite d'évaluer le modèle sur des données qu'il n'a pas utilisées directement pendant l'apprentissage.
 
-14. 📏 Évaluation du modèle
+## 14. 📏 Évaluation du modèle
 
 Le modèle a obtenu les résultats suivants :
 
@@ -467,7 +467,7 @@ RÉSULTATS
 MAE  : 58,503,300 FCFA
 RMSE : 77,533,359 FCFA
 R²   : 0.6236
-15. 📐 Comprendre le MAE
+## 15. 📐 Comprendre le MAE
 
 MAE signifie :
 
@@ -485,7 +485,7 @@ Cela signifie que, sur l'ensemble de test utilisé, l'erreur absolue moyenne des
 
 Ce résultat doit être interprété avec prudence compte tenu de la taille et de la qualité du dataset.
 
-16. 📐 Comprendre le RMSE
+## 16. 📐 Comprendre le RMSE
 
 RMSE signifie :
 
@@ -499,7 +499,7 @@ Le RMSE pénalise davantage les erreurs importantes.
 
 Un écart important entre le MAE et le RMSE peut notamment indiquer la présence de prédictions particulièrement éloignées de certaines valeurs réelles.
 
-17. 📊 Comprendre le R²
+## 17. 📊 Comprendre le R²
 
 Le coefficient de détermination obtenu est :
 
@@ -511,7 +511,7 @@ Ce résultat montre que le modèle a appris des relations utiles dans les donné
 
 Le modèle doit donc être considéré comme une première version expérimentale, et non comme un système d'expertise immobilière définitif.
 
-18. 🔬 Interprétation des performances
+## 18. 🔬 Interprétation des performances
 
 Les performances obtenues sont intéressantes pour une première version du projet, mais elles montrent également les limites du dataset.
 
@@ -533,7 +533,7 @@ offre et demande au moment de la vente.
 
 Plus les données disponibles seront riches et fiables, plus le modèle pourra apprendre des relations pertinentes.
 
-19. ⚡ API FastAPI
+## 19. ⚡ API FastAPI
 
 FastAPI joue le rôle d'intermédiaire entre l'interface et le modèle.
 
@@ -555,7 +555,7 @@ Prix
 
 Cette architecture est particulièrement intéressante dans une perspective de déploiement.
 
-20. 🔌 Endpoint de prédiction
+## 20. 🔌 Endpoint de prédiction
 
 L'application utilise un endpoint de prédiction :
 
@@ -574,7 +574,7 @@ Exemple :
     "salles_bain": 2,
     "garages": 2
 }
-21. 🎨 Interface Streamlit
+## 21. 🎨 Interface Streamlit
 
 Streamlit fournit l'interface utilisateur.
 
@@ -582,8 +582,8 @@ L'objectif est de permettre à une personne qui ne connaît pas Python ou le Mac
 
 L'utilisateur sélectionne les caractéristiques du bien puis clique sur :
 
-💰 ESTIMER LE PRIX 💰
-22. 🔄 Fonctionnement complet
+### 💰 ESTIMER LE PRIX 💰
+## 22. 🔄 Fonctionnement complet
 
 Lorsqu'un utilisateur effectue une estimation :
 
@@ -630,7 +630,7 @@ FastAPI renvoie le résultat.
 
 Streamlit affiche le prix.
 
-23. 💰 Prix au m²
+## 23. 💰 Prix au m²
 
 Une fonctionnalité supplémentaire permet de calculer le prix estimé par mètre carré.
 
@@ -656,7 +656,7 @@ Cette valeur est une indication dérivée de la prédiction du modèle.
 
 Elle ne correspond pas nécessairement au prix réel du marché au m².
 
-24. 📜 Historique des estimations
+## 24. 📜 Historique des estimations
 
 L'application conserve les estimations effectuées pendant la session Streamlit.
 
@@ -674,7 +674,7 @@ Prix/m²
 
 Cela permet de comparer plusieurs biens.
 
-25. 📊 Statistiques
+## 25. 📊 Statistiques
 
 À partir de l'historique, l'application calcule automatiquement :
 
@@ -695,7 +695,7 @@ Prix moyen au m²
 
 La moyenne des prix au m² calculés pour les biens estimés.
 
-26. 📈 Graphiques
+## 26. 📈 Graphiques
 
 L'application propose également des graphiques permettant de visualiser :
 
@@ -707,7 +707,7 @@ Chaque nouvelle estimation est ajoutée au graphique.
 
 Cette visualisation permet de comparer la valeur estimée par mètre carré entre les différents biens.
 
-27. 🧪 Exemple de prédiction
+## 27. 🧪 Exemple de prédiction
 
 Un exemple testé avec le modèle :
 
@@ -731,7 +731,7 @@ Prix estimé :
 
 Cet exemple montre le fonctionnement du pipeline complet.
 
-28. 🛡️ Gestion des erreurs
+## 28. 🛡️ Gestion des erreurs
 
 L'application gère plusieurs situations.
 
@@ -739,23 +739,23 @@ FastAPI inaccessible
 
 Si le serveur n'est pas lancé :
 
-🔴 Impossible de contacter FastAPI.
+### 🔴 Impossible de contacter FastAPI.
 Erreur HTTP
 
 Si l'API renvoie une erreur, Streamlit affiche notamment le code HTTP et la réponse du serveur.
 
 Exemple :
 
-🔴 Erreur API : HTTP 405
+### 🔴 Erreur API : HTTP 405
 Timeout
 
 Si le serveur ne répond pas suffisamment rapidement :
 
-🟠 Le serveur met trop de temps à répondre.
+### 🟠 Le serveur met trop de temps à répondre.
 
 Cette gestion facilite le débogage de l'application.
 
-29. 💻 Installation
+## 29. 💻 Installation
 1. Cloner le projet
 git clone https://github.com/USERNAME/cotonou-immo-ai.git
 
@@ -773,7 +773,7 @@ Activation :
 source venv/bin/activate
 3. Installer les dépendances
 pip install -r requirements.txt
-30. ▶️ Lancement du projet
+## 30. ▶️ Lancement du projet
 
 Le projet utilise deux composants principaux :
 
@@ -790,7 +790,7 @@ streamlit run app.py
 
 L'interface Streamlit est alors accessible depuis l'adresse affichée dans le terminal.
 
-31. 🧑‍💻 Utilisation
+## 31. 🧑‍💻 Utilisation
 
 Une fois l'application lancée :
 
@@ -825,7 +825,7 @@ Graphiques
     "salles_bain": 2,
     "garages": 2
 }
-33. 📦 Exemple de réponse
+## 33. 📦 Exemple de réponse
 
 La réponse dépend de l'exécution du modèle.
 
@@ -837,7 +837,7 @@ Exemple :
 
 Streamlit récupère ensuite cette valeur pour l'afficher.
 
-34. 🔐 Gestion du modèle
+## 34. 🔐 Gestion du modèle
 
 Le modèle est sauvegardé localement avec Joblib.
 
@@ -857,7 +857,7 @@ data = joblib.load("model.pkl")
 
 Cette approche évite de réentraîner le modèle à chaque démarrage de l'application.
 
-35. ⚠️ Limites du projet
+## 35. ⚠️ Limites du projet
 
 Cette version présente plusieurs limites.
 
@@ -889,7 +889,7 @@ L'application ne constitue pas une expertise immobilière professionnelle.
 
 Le résultat doit être considéré comme une estimation algorithmique.
 
-36. 🚀 Améliorations futures
+## 36. 🚀 Améliorations futures
 
 Le projet peut être fortement amélioré.
 
@@ -942,7 +942,7 @@ dépendance ;
 groupe électrogène ;
 forage ;
 etc.
-37. 🧠 Amélioration du Machine Learning
+## 37. 🧠 Amélioration du Machine Learning
 
 Plusieurs modèles pourraient être comparés :
 
@@ -967,7 +967,7 @@ Linear Regression	...	...	...
 Decision Tree	...	...	...
 Random Forest	...	...	...
 Gradient Boosting	...	...	...
-38. 🔍 Validation croisée
+## 38. 🔍 Validation croisée
 
 Une prochaine version pourrait utiliser une Cross-Validation afin d'obtenir une évaluation plus robuste du modèle.
 
@@ -975,7 +975,7 @@ Au lieu de dépendre d'une seule séparation entraînement/test, les données po
 
 Cela permettrait d'avoir une meilleure estimation de la capacité de généralisation du modèle.
 
-39. ⚙️ Hyperparameter Tuning
+## 39. ⚙️ Hyperparameter Tuning
 
 Les paramètres du Random Forest pourraient être optimisés.
 
@@ -997,7 +997,7 @@ RandomizedSearchCV
 
 pourrait être utilisée.
 
-40. 🧠 Explainable AI
+## 40. 🧠 Explainable AI
 
 Une future version pourrait expliquer pourquoi le modèle produit une certaine estimation.
 
@@ -1011,7 +1011,7 @@ Salles de bain    ███
 
 Des outils comme SHAP pourraient permettre d'analyser l'importance des variables.
 
-41. 🗄️ Base de données
+## 41. 🗄️ Base de données
 
 Actuellement, l'historique est conservé pendant la session Streamlit.
 
@@ -1033,7 +1033,7 @@ Historique
 
 Cela permettrait de conserver les estimations même après le redémarrage de l'application.
 
-42. ☁️ Déploiement
+## 42. ☁️ Déploiement
 
 Une future version pourrait être déployée en ligne.
 
@@ -1060,7 +1060,7 @@ Architecture possible :
               ┌─────────────────┐
               │   PostgreSQL    │
               └─────────────────┘
-43. 🤖 Perspectives MLOps
+## 43. 🤖 Perspectives MLOps
 
 Ce projet peut également évoluer vers une architecture MLOps complète.
 
@@ -1092,7 +1092,7 @@ versionnement des modèles ;
 versionnement des datasets ;
 tests automatiques ;
 déploiement cloud.
-44. 🐳 Docker
+## 44. 🐳 Docker
 
 Une prochaine version pourrait être containerisée avec Docker.
 
@@ -1108,7 +1108,7 @@ Docker
 
 Cela faciliterait le déploiement sur différentes machines.
 
-45. 🔄 CI/CD
+## 45. 🔄 CI/CD
 
 GitHub Actions pourrait automatiquement :
 
@@ -1118,7 +1118,7 @@ exécuter les tests ;
 vérifier le code ;
 construire l'application ;
 préparer le déploiement.
-46. 📈 Monitoring
+## 46. 📈 Monitoring
 
 Une version plus avancée pourrait suivre :
 
@@ -1131,7 +1131,7 @@ performances du modèle.
 
 Cela permettrait de détecter lorsqu'un modèle devient moins performant.
 
-47. 🧪 Tests
+## 47. 🧪 Tests
 
 Le projet peut également intégrer des tests automatisés.
 
@@ -1149,7 +1149,7 @@ que l'API répond correctement ;
 que les données sont valides ;
 que le modèle retourne une valeur numérique ;
 que les valeurs impossibles sont rejetées.
-48. 🔒 Sécurité
+## 48. 🔒 Sécurité
 
 Pour un déploiement réel, plusieurs éléments supplémentaires seraient nécessaires :
 
@@ -1160,7 +1160,7 @@ protection de l'API ;
 gestion des secrets ;
 HTTPS ;
 journalisation.
-49. 📌 Compétences démontrées
+## 49. 📌 Compétences démontrées
 
 Ce projet permet de démontrer plusieurs compétences.
 
@@ -1196,7 +1196,7 @@ Déploiement / MLOps
 ✔ GitHub
 ✔ Architecture API + modèle
 ✔ Préparation au déploiement
-50. 📊 Résultats actuels
+## 50. 📊 Résultats actuels
 
 Le modèle actuel a obtenu :
 
@@ -1209,7 +1209,7 @@ Ces résultats constituent la performance de la version actuelle du modèle sur 
 
 Ils serviront de baseline pour les futures améliorations.
 
-51. 🎯 Roadmap
+## 51. 🎯 Roadmap
 
 Le projet peut évoluer progressivement.
 
@@ -1243,7 +1243,7 @@ Le projet peut évoluer progressivement.
 [ ] Monitoring
 [ ] Déploiement cloud
 [ ] CI/CD
-52. 🏆 Vision du projet
+## 52. 🏆 Vision du projet
 
 L'objectif à long terme est de transformer Cotonou Immo AI en une véritable plateforme intelligente d'analyse immobilière.
 
@@ -1269,7 +1269,7 @@ La vision pourrait être :
 
 Le projet pourrait ainsi évoluer d'une simple application de prédiction vers un système complet d'analyse du marché immobilier béninois.
 
-53. ⚠️ Avertissement
+## 53. ⚠️ Avertissement
 
 Cotonou Immo AI est un projet expérimental et éducatif de Machine Learning.
 
@@ -1284,19 +1284,19 @@ une estimation notariale.
 
 La précision du système dépend notamment de la qualité, de la quantité et de la représentativité des données utilisées.
 
-54. 👨‍💻 Auteur
+## 54. 👨‍💻 Auteur
 
 Amen QUENUM
 
 Projet personnel réalisé dans le cadre de l'apprentissage et de la pratique du :
 
-🐍 Python
-📊 Data Science
-🤖 Machine Learning
-⚡ FastAPI
-🎨 Streamlit
-🚀 MLOps
-⭐ Conclusion
+# 🐍 Python
+# 📊 Data Science
+# 🤖 Machine Learning
+# ⚡ FastAPI
+# 🎨 Streamlit
+# 🚀 MLOps
+# ⭐ Conclusion
 
 Cotonou Immo AI constitue une première implémentation complète d'un projet de Machine Learning appliqué à un problème concret.
 
