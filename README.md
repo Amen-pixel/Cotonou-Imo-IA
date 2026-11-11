@@ -2,7 +2,7 @@
 # 🏠 Cotonou Immo AI 🇧🇯
 
 ## Application de Machine Learning pour l'estimation des prix immobiliers à Cotonou, intégrant un modèle Random Forest, une API FastAPI et une interface interactive Streamlit.
-
+## Lien de démo : https://www.loom.com/share/5bc090be3dc54085982897d42ccda963
 ## 📌 Table des matières
 ### 1. Présentation du projet
 ### 2. Objectifs
