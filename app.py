@@ -1,6 +1,7 @@
 """Interface Streamlit : formulaire -> appel de l'API -> prix estimé."""
 import json
 import os
+import time
 from pathlib import Path
 
 import pandas as pd
@@ -179,6 +180,13 @@ if st.button("💰 ESTIMER LE PRIX 💰", width="stretch"):
     with st.spinner("🤖 Analyse des données immobilières (le premier appel peut être long)..."):
         try:
             response = requests.post(API_URL, json=donnees, timeout=90)
+
+            # API gratuite endormie : Render répond 502/503/504, on réessaie
+            for _ in range(5):
+                if response.status_code not in (502, 503, 504):
+                    break
+                time.sleep(15)
+                response = requests.post(API_URL, json=donnees, timeout=90)
 
             if response.status_code == 200:
                 prix = float(response.json()["prix_estime_fcfa"])
