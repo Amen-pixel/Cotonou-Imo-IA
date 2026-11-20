@@ -1,158 +1,55 @@
+"""API FastAPI : reçoit les caractéristiques d'un bien, renvoie le prix estimé."""
+import os
+from pathlib import Path
 
-from fastapi import FastAPI
-from pydantic import BaseModel
-import pandas as pd
 import joblib
+import pandas as pd
 import uvicorn
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
 
-
-# ============================================================
-# 1. CHARGEMENT DU MODÈLE
-# ============================================================
-
-data = joblib.load("model.pkl")
-
+# 1. Chargement du modèle (créé par projet.py)
+data = joblib.load(Path(__file__).parent / "model.pkl")
 model = data["model"]
-model_columns = data["columns"]
 
-
-# ============================================================
-# 2. CRÉATION DE L'APPLICATION FASTAPI
-# ============================================================
-
+# 2. Application
 app = FastAPI(
     title="Cotonou Real Estate API",
     description="API de prédiction des prix immobiliers à Cotonou",
-    version="1.0.0"
+    version="2.0.0",
 )
 
 
-# ============================================================
-# 3. STRUCTURE DES DONNÉES REÇUES
-# ============================================================
-
+# 3. Données attendues
 class House(BaseModel):
-
     quartier: str
     type_bien: str
-    superficie_m2: float
-    chambres: int
-    pieces: int
-    salles_bain: int
-    garages: int
+    superficie_m2: float = Field(gt=0)
+    chambres: int = Field(ge=0)
+    pieces: int = Field(ge=0)
+    salles_bain: int = Field(ge=0)
+    garages: int = Field(ge=0)
 
 
-# ============================================================
-# 4. ROUTE PRINCIPALE
-# ============================================================
-
+# 4. Route d'accueil (sert aussi de test "le serveur est en ligne")
 @app.get("/")
 def home():
-
-    return {
-        "message": "Cotonou Real Estate API",
-        "status": "online"
-    }
+    return {"message": "Cotonou Real Estate API", "status": "online"}
 
 
-# ============================================================
-# 5. ROUTE DE PRÉDICTION
-# ============================================================
-
+# 5. Route de prédiction
 @app.post("/predict")
 def predict(house: House):
+    if house.quartier not in data["quartiers"]:
+        raise HTTPException(422, f"Quartier inconnu : {house.quartier}")
+    if house.type_bien not in data["types_bien"]:
+        raise HTTPException(422, f"Type de bien inconnu : {house.type_bien}")
 
-    # --------------------------------------------------------
-    # Création du DataFrame
-    # --------------------------------------------------------
-
-    nouvelle_maison = pd.DataFrame([{
-
-        "quartier": house.quartier,
-
-        "type_bien": house.type_bien,
-
-        "superficie_m2": house.superficie_m2,
-
-        "chambres": house.chambres,
-
-        "pieces": house.pieces,
-
-        "salles_bain": house.salles_bain,
-
-        "garages": house.garages
-
-    }])
+    maison = pd.DataFrame([house.model_dump()])
+    prix = model.predict(maison)[0]
+    return {"prix_estime_fcfa": round(float(prix))}
 
 
-    # --------------------------------------------------------
-    # Encodage des variables catégorielles
-    # --------------------------------------------------------
-
-    nouvelle_maison = pd.get_dummies(
-
-        nouvelle_maison,
-
-        columns=[
-            "quartier",
-            "type_bien"
-        ],
-
-        dtype=float
-
-    )
-
-
-    # --------------------------------------------------------
-    # Reproduire exactement les colonnes
-    # utilisées pendant l'entraînement
-    # --------------------------------------------------------
-
-    nouvelle_maison = nouvelle_maison.reindex(
-
-        columns=model_columns,
-
-        fill_value=0
-
-    )
-
-
-    # --------------------------------------------------------
-    # Prédiction
-    # --------------------------------------------------------
-
-    prix = model.predict(
-
-        nouvelle_maison
-
-    )[0]
-
-
-    # --------------------------------------------------------
-    # Retourner le résultat
-    # --------------------------------------------------------
-
-    return {
-
-        "prix_estime_fcfa": round(
-            float(prix)
-        )
-
-    }
-
-
-# ============================================================
-# 6. LANCEMENT DU SERVEUR
-# ============================================================
-
+# 6. Lancement en local (sur Render, c'est la commande uvicorn qui démarre)
 if __name__ == "__main__":
-
-    uvicorn.run(
-
-        app,
-
-        host="127.0.0.1",
-
-        port=8005
-
-    )
+    uvicorn.run(app, host="127.0.0.1", port=int(os.getenv("PORT", 8005)))
